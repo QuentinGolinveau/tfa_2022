@@ -27,5 +27,9 @@
     "rimraf": "^3.0.2",
     "sass": "^1.49.0",
     "sass-loader": "^12.4.0"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "modern-normalize": "^1.1.0"
   }
 }
