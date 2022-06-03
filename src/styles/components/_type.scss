@@ -4,6 +4,7 @@ body {
   font-family: 'Francois One', sans-serif;
   font-weight: 400;
   line-height:1.4;
+  overflow-x: hidden;
 }
 main{
   margin: 0 16px;
@@ -84,12 +85,10 @@ a{
   &--marque{
     position: relative;
     margin-top: 145px;
-    background-image: url(../assets/images/balle.svg);
-    background-position: -150% center;
-    background-size: cover;
-    background-repeat: no-repeat;
     .balle{
       position: absolute;
+      right: -75%;
+      height: -webkit-fill-available;
       z-index: -1;
     }
     .liste{
@@ -103,19 +102,24 @@ a{
   }
   &--choix{
     margin-top: 145px;
+    .title--second{
+      text-align: center;
+    }
   }
   &--download{
     position: relative;
     margin: 145px 0 160px 0;
-    background-image: url(../assets/images/balle.svg);
-    background-position: center center;
-    background-size: contain;
-    background-repeat: no-repeat;
     height: 77vw;
     display: flex;
     flex-direction: column;
     justify-content:center;
     align-items: center;
+    .balle{
+      position: absolute;
+      right: initial;
+      height: -webkit-fill-available;
+      z-index: -1;
+    }
     .title--second{
       text-align:center;
     }
@@ -151,5 +155,255 @@ a{
     width:48px;
   }
 }
+@media (min-width: 425px){
+  .section{
+    &--marque{
+      .balle{
+        right: -25%;
+      }
+    }
+  }
+}
 
-
+@media (min-width: 768px){
+  body {
+    font-size: $size-text-tab;
+  }
+  main{
+    margin: 0 8vw;
+  }
+  .title{
+    margin: 48px 0 0 16px;
+    font-size: $size-h1-tab;
+    color: $c-text;
+    &--second{
+      font-size: $size-h2-tab;
+    }
+    &--span{
+      line-height:1;
+      color: $c-green;
+    }
+  }
+  .fond{
+    margin-top: 64px;
+    margin-left: -8vw;
+    margin-bottom: 64px;
+    background-image: url(../assets/images/fond_mockup.svg);
+    background-position: center center;
+    background-size: cover;
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    &--image{
+      margin-left:64px;
+      width: 20vh;
+    }
+    &--inv{
+      background-image: url(../assets/images/fond_mockup_inv.svg);
+      margin-top: 82px;
+      margin-bottom: 145px;
+      .fond--image{
+        margin-right:64px;
+      }
+    }
+  }
+  .download{
+    margin-top: 27px;
+    margin-left: -8vw;
+    height: 104px;
+    background-image: url(../assets/images/grille.svg);
+    background-position: center center;
+    background-size: cover;
+    width: 100vw;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    a{
+      display: flex;
+      width: 110px;
+    }
+    &--image{
+      width: 110px;
+    }
+    &--v2{
+      background-image: initial;
+      margin:initial;
+      width: 100%;
+    }
+  }
+  .section{
+    &--banner{
+      
+    }
+    &--marque{
+      position: relative;
+      margin-top: 145px;
+      .balle{
+        position: absolute;
+        right: -50%;
+        z-index: -1;
+      }
+      .liste{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 64px;
+      }
+      p{
+        margin-top:52px;
+      }
+    }
+    &--choix{
+      margin-top: 145px;
+    }
+    &--download{
+      position: relative;
+      margin: 145px 0 160px 0;
+      height: 40vw;
+      display: flex;
+      flex-direction: column;
+      justify-content:center;
+      align-items: center;
+      .title--second{
+        text-align:center;
+      }
+      .texte{
+        text-align:center;
+      }
+    }
+  }
+  .footer{
+    &--title{
+  
+    }
+    .dwt{
+      width:48px;
+    }
+  }
+}
+@media (min-width: 968px){
+  body {
+    font-size: $size-text-pc;
+  }
+  main{
+    margin: 0 16vw;
+  }
+  .title{
+    margin: 64px 0 0 16px;
+    text-align: center;
+    font-size: $size-h1-pc;
+    color: $c-text;
+    &--second{
+      font-size: $size-h2-pc;
+    }
+    &--span{
+      line-height:1;
+      color: $c-green;
+    }
+  }
+  .fond{
+    margin-top: 96px;
+    margin-left: -16vw;
+    margin-bottom: 64px;
+    background-image: url(../assets/images/fond_mockup.svg);
+    background-position: center center;
+    background-size: cover;
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    &--image{
+      margin-left:64px;
+      width: 20vh;
+    }
+    &--inv{
+      background-image: url(../assets/images/fond_mockup_inv.svg);
+      margin-top: 82px;
+      margin-bottom: 145px;
+      .fond--image{
+        margin-right:64px;
+      }
+    }
+  }
+  .download{
+    margin-top: 27px;
+    margin-left: -16vw;
+    height: 15vh;
+    background-image: url(../assets/images/grille.svg);
+    background-position: center center;
+    background-size: cover;
+    width: 100vw;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    a{
+      display: flex;
+      width: 213px;
+    }
+    &--image{
+      width: 213px;
+    }
+    &--v2{
+      background-image: initial;
+      margin:initial;
+      width: 100%;
+    }
+  }
+  .section{
+    &--banner{
+      
+    }
+    &--marque{
+      position: relative;
+      margin-top: 145px;
+      .balle{
+        position: absolute;
+        right: -25%;
+        z-index: -1;
+      }
+      .liste{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 64px;
+      }
+      p{
+        margin-top:52px;
+      }
+    }
+    &--choix{
+      margin-top: 145px;
+    }
+    &--download{
+      position: relative;
+      margin: 145px 0 160px 0;
+      height: 25vw;
+      display: flex;
+      flex-direction: column;
+      justify-content:center;
+      align-items: center;
+      .title--second{
+        text-align:center;
+      }
+      .texte{
+        text-align:center;
+      }
+    }
+  }
+  .footer{
+    &--title{
+  
+    }
+    .dwt{
+      width:48px;
+    }
+  }
+}
+@media (min-width: 1400px){
+  .section{
+    &--marque{
+      background-position: 100% center;
+    }
+  }
+}
