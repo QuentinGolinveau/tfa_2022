@@ -17,6 +17,7 @@ body {
       margin: 24px 0 16px;
       grid-row: 1;
       grid-column: 1/-1;
+      text-align:left;
     }
   }
   .footer{
@@ -67,6 +68,7 @@ picture{
     align-items: center;
   }
   &--h4{
+    justify-content:center;
     font-size: $size-h4;
   }
   &--h5{
@@ -172,19 +174,22 @@ picture{
     }
   }
   &--planche{
-    display:flex;
-    position: relative;
-    margin: 145px 0 160px 0;
-    height: 77vw;
-    display: none;
-    flex-direction: column;
-    justify-content:center;
+    margin: 48px 0;
+    height: 70vw;
+    justify-items: center;
     align-items: center;
-    .planche{
-      position: absolute;
-      right: initial;
-      height: -webkit-fill-available;
-      z-index: -1;
+    justify-content: center;
+    align-content: center;
+    .img, .title{
+      grid-column: 1/-1;
+    }
+    .title{
+      margin-bottom:64px;
+      font-size: $size-h2;
+      text-align: left;
+    }
+    .img{
+      width:100vw;
     }
   }
   &--projet{
@@ -263,6 +268,9 @@ picture{
         grid-column: 1/-1;
       }
   }
+  &--final,&--test{
+    margin-bottom: 64px;
+  }
   &--final{
       .texte{
         grid-row: 2;
@@ -327,6 +335,89 @@ picture{
   margin-right: 8px;
   width: 24px;
 }
+.lien{
+  &--video{
+    text-decoration: underline;
+  }
+}
+
+.hide {
+  display: none;
+}
+.slideshow-container {
+  width: 100vw;
+  text-align: center;
+  color: $c-blanc;
+  background-color: $c-green;
+  max-width: 1000px;
+  height: 30vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 64px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: $c-orange;
+  font-weight: bold;
+  font-size: 33px;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: transparent;
+}
+.prev{
+  left:0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: $c-text;
+  opacity: 0.8;
+}
+.mySlides{
+  width: 70vw;
+  align-self: center;
+  text-align:initial;
+}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @media (min-width: 425px){
   .section{
     &--marque{
@@ -347,13 +438,16 @@ picture{
   .title{
     margin: 48px 0 0 16px;
     font-size: $size-h1-tab;
-    color: $c-text;
     &--second{
       font-size: $size-h2-tab;
     }
     &--span{
       line-height:1;
       color: $c-green;
+    }
+    &--h4{
+      font-size:$size-h4-tab;
+      margin: 16px 0;
     }
   }
   .fond{
@@ -444,6 +538,17 @@ picture{
         text-align:center;
       }
     }
+    &--probleme{
+      .cita{
+        margin: 72px 0;
+      }
+      .liste{
+        padding: 48px 24px;
+      }
+    }
+    &--final,&--test{
+      margin-bottom: 96px;
+    }
   }
   .footer{
     &--title{
@@ -452,6 +557,23 @@ picture{
     .dwt{
       width:48px;
     }
+  }
+  .slideshow-container {
+    height: 25vh;
+    width:initial;
+  }
+  .casestudy{
+    .section{
+      &--title{
+        font-size: $size-h3-tab;
+      }
+    }
+  }
+  .citation{
+    font-size: $size-cita-tab;
+  }
+  .figcaption{
+    font-size: $size-fig-tab;
   }
 }
 @media (min-width: 968px){
@@ -465,13 +587,19 @@ picture{
     margin: 64px 0 0 16px;
     text-align: center;
     font-size: $size-h1-pc;
-    color: $c-text;
     &--second{
       font-size: $size-h2-pc;
     }
     &--span{
       line-height:1;
       color: $c-green;
+    }
+    &--h4{
+      margin: 16px 0;
+      font-size:$size-h4-pc;
+    }
+    &--h5{
+      font-size:$size-h5-pc;
     }
   }
   .fond{
@@ -482,13 +610,13 @@ picture{
     background-position: center center;
     background-size: cover;
     width: 100vw;
-    height: 50vh;
+    height: 60vh;
     display: flex;
     justify-content:center;
     align-items:center;
     &--image{
       margin-left:64px;
-      width: 20vh;
+      width: 30vh;
     }
     &--inv{
       background-image: url(../assets/images/fond_mockup_inv.svg);
@@ -525,7 +653,9 @@ picture{
   }
   .section{
     &--banner{
-      
+      .texte{
+        margin-bottom: 64px;
+      }
     }
     &--marque{
       position: relative;
@@ -562,6 +692,27 @@ picture{
         text-align:center;
       }
     }
+    &--recherche{
+      .slideshow-container{
+        padding: 48px;
+        height: 100%;
+        max-width: none;
+      }
+    }
+    &--probleme{
+      .liste{
+        padding: 48px;
+      }
+    }
+    &--test{
+      .img{
+        display: flex;
+        justify-content:center;
+        .user{
+          max-width: 780px;
+        }
+      }
+    }
   }
   .footer{
     &--title{
@@ -570,6 +721,31 @@ picture{
     .dwt{
       width:48px;
     }
+  }
+  .casestudy{
+    .section{
+      &--title{
+          font-size: $size-h3-pc;
+      }
+    }
+  }
+  .citation{
+    font-size: $size-cita-pc;
+  }
+  .cita{
+    margin: 104px 64px;
+  }
+  .mySlides{
+    width:50vw;
+  }
+  .icon{
+    max-width: 150px;
+    &--arrow{
+      max-width: 100px;
+    }
+  }
+  .figcaption{
+    font-size: $size-fig-pc;
   }
 }
 @media (min-width: 1400px){
@@ -581,82 +757,5 @@ picture{
 }
 
 
-//Case
-.hide {
-  display: none;
-}
-.slideshow-container {
-  width: 100vw;
-  text-align: center;
-  color: $c-blanc;
-  background-color: $c-green;
-  max-width: 1000px;
-  height: 30vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 64px;
-}
 
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: $c-orange;
-  font-weight: bold;
-  font-size: 33px;
-  -webkit-transition: 0.6s ease;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-color: transparent;
-}
-.prev{
-  left:0;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-  background-color: $c-text;
-  opacity: 0.8;
-}
-.mySlides{
-  width: 70vw;
-  align-self: center;
-  text-align:initial;
-}
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1s;
-}
-
-@-webkit-keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
