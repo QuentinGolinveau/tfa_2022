@@ -14,9 +14,17 @@ body {
     column-gap: 0.5em;
     &--title{
       font-size: $size-h3;
-      margin: 24px 0;
+      margin: 24px 0 16px;
       grid-row: 1;
       grid-column: 1/-1;
+    }
+  }
+  .footer{
+    &--liste{
+      .lien{
+        width: 72px;
+        text-align: center;
+      }
     }
   }
 }
@@ -53,6 +61,10 @@ picture{
   &--h4,&--h5{
     color: $c-blanc;
     margin: 13px 0;
+    font-style: italic;
+    font-weight:600;
+    display: flex;
+    align-items: center;
   }
   &--h4{
     font-size: $size-h4;
@@ -229,6 +241,9 @@ picture{
         color: $c-blanc;
         margin: 0 -16px;
         padding: 24px;
+        li{
+          margin: 32px 0;
+        }
       }
       .cita{
         align-self: center;
@@ -271,17 +286,16 @@ picture{
   flex-direction: column;
   justify-content:center;
   align-items: center;
-  height: 20vh;
   background-color: $c-green;
   &--title{
-
+    margin: 32px 0;
   }
   &--liste{
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100vw;
-    margin-bottom: 0;
+    margin-bottom: 32px;
   }
   a{
     color: $c-blanc;
@@ -307,6 +321,11 @@ picture{
 }
 .cita{
   margin: 56px 0;
+}
+.svg{
+  fill: $c-blanc;
+  margin-right: 8px;
+  width: 24px;
 }
 @media (min-width: 425px){
   .section{

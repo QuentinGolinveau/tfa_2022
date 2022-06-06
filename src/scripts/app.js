@@ -42,7 +42,7 @@ gsap.from(".section--choix .fond--image", {
 let ajd = new Date();
 let year = ajd.getFullYear();
 let copyright = document.querySelector(".copyright a");
-copyright.innerHTML = "©"+ year +"QuentinGOlinveau";
+copyright.innerHTML = "©"+ year +"QuentinGolinveau";
 
 //Slider
 var slideIndex = 1;
