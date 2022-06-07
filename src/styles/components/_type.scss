@@ -42,6 +42,20 @@ ul{
 a{
   text-decoration: none;
   color:$c-text;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:active {
+    color: $c-blanc;
+    background-color: $c-green;
+    text-decoration: underline $c-blanc;
+  }
+  &:visited{
+    color: $c-blanc;
+    background-color: $c-text;
+    text-decoration: underline $c-blanc;
+  }
+
 }
 picture{
   img{
@@ -52,6 +66,17 @@ picture{
   margin: 26px 0 0 16px;
   font-size: 16px;
   color: $c-text;
+  a{
+    color: $c-text;
+    &:hover{
+      cursor: pointer;
+      text-decoration: none;
+    }
+    &:active,&:visited{
+      text-decoration: none;
+      background-color: initial;
+    }
+  }
   &--second{
     font-size: $size-h2;
   }
