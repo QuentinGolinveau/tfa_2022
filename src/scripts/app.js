@@ -10,7 +10,6 @@ gsap.from(".balle", {
     scrollTrigger:{
         trigger:".section--marque",
         start:"center bottom",
-        markers: true,
     },
 });
 
@@ -22,7 +21,6 @@ gsap.from(".balle--v2",{
     scrollTrigger:{
         trigger:".section--choix",
         start:"top top",
-        markers: true,
     },
 });
 
@@ -33,7 +31,6 @@ gsap.from(".section--choix .fond--image", {
     scrollTrigger:{
         trigger:".section--choix",
         start:"center bottom",
-        markers: true,
     },
 });
 
